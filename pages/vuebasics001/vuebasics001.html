@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+  <nav class="nav">
+      <div class="container">
+          <h1><a href="#">Vue Basics</a></h1>
+          <ul>
+              <li><a href="#" onClick="goBack()">Go Back</a></li>
+          </ul>
+      </div>
+  </nav>
+  <div class="container">
+    <br><br><br>
+  </div>
+  <div class="container">
+
+    <header>
+      <h1>Interpolation</h1>
+    </header>
+
+    <section id="assignment">
+      <!-- 1) Output your name -->
+      <h2>{{myData.myName}}</h2>
+      <!-- 2) Output your age -->
+      <p>{{myData.myAge}} years old</p>
+      <!-- 3) Output your age + 5 -->
+      <p>{{myData.myAge+5}} in 5 years</p>
+      <!-- 4) Output a random number (0 to 1) -->
+      <p>Favorite Number: {{RandomNumberBetweenOneAndZero()}}</p>
+      <div>
+        <!-- 5) Display some image you found via Google -->
+        <img :src="myData.myImage" />
+      </div>
+      <!-- 6) Prepopulate the input field with your name via the "value" attribute -->
+      <input type="text" :value="myData.myName" />
+    </section>
+  </div>
+  
+  </body>
+</html>

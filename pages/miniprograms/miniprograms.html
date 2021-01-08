@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Programs</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer  src="script.js"></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <h1><a href="#">Mini Programs - (Vanilla JavaScript)</a></h1>
+            <ul>
+                <li><a href="#" onClick="goBack()">Go Back</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="wholeside">
+            <div class="leftside">
+                <h2>Program List</h2>
+                <ul id="programlist">
+                    <li><a href="#" class="active" id="spellbackwards" onClick="changeProgram(this.id,this.text)">Spell Backwards</a></li>
+                    <li><a href="#" id="palindrome" onClick="changeProgram(this.id,this.text)">Palindrome</a></li>
+                    <li><a href="#" id="fibonacci" onClick="changeProgram(this.id,this.text)">Fibonacci</a></li>
+                </ul>
+            </div>
+            
+            <div class="rightside">
+                <h2 id="programtitle">Spell Backwards</h2>
+                <br>
+                <label>Input:</label>
+                <input type="text" id="input" placeholder="Enter Input">
+                <label>Output:</label>
+                <input type="text" id="output" placeholder="Output Display Here" readonly>
+                <button onClick="showResult()">Submit</button>
+            <div>
+
+        </div>
+    </div>
+
+</body>
+</html>

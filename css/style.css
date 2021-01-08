@@ -1,0 +1,114 @@
+@import 'navbar.css';
+
+/* CARDS */
+
+.cardlist {
+    padding-top: 100px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.card {
+    position: relative;
+    cursor:pointer;
+    border: transparent;
+    height: 300px;
+    width: auto;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card h4{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    color: #343a40;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 0px 0px 3px 3px;
+}
+
+
+/* CARD BACKGROUND IMAGE */
+
+.curriculumvitae{
+    background: url('../img/curriculumvitae.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.miniprograms{
+    background: url('../img/miniprograms.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.crud{
+    background: url('../img/crud.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.quiz{
+    background: url('../img/quiz.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.rockpaperscissors{
+    background: url('../img/rockpaperscissors.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.ganttchart{
+    background: url('../img/ganttchart.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.servicemonitoring{
+    background: url('../img/na.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.vuebasics001{
+    background: url('../img/vuebasics001.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.vuebasics002{
+    background: url('../img/vuebasics002.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.vuebasics003{
+    background: url('../img/vuebasics003.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.vuebasics004{
+    background: url('../img/vuebasics004.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.vuebasics005{
+    background: url('../img/vuebasics005.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.vuebasics006{
+    background: url('../img/vuebasics006.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.na{
+    background: url('../img/na.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+
+
+
+
+

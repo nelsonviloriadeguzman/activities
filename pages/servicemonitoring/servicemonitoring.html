@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Service Monitoring</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" defer></script>
+  <script src="app.js" defer></script>
+
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+
+        <v-app-bar>
+            <v-toolbar-title>
+              <h2>Service Monitoring - (Vue.js + Vuetify)
+                <v-btn color="primary" elevation="0">On Going</v-btn>
+                <v-btn color="error" elevation="0">Unpaid</v-btn>
+                <v-btn color="success" elevation="0">Paid</v-btn>
+              </h2>
+            </v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn @click="goBack" elevation="0">Go Back</v-btn>
+        </v-app-bar>
+
+        <v-container>
+          <template>
+            <v-row>
+              <v-col class="text-right"><v-btn @click="addNew" class="primary" small><v-icon>mdi-plus</v-icon></v-col>
+            </v-row>
+         
+            <v-simple-table>
+              <template v-slot:default>
+                <thead>
+                  <tr>
+                    <th class="text-center" :style="nameHeaderStyle" >Name</th>
+                    <th>Action</v-btn></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    v-for="(item,itemIndex) in itemList"
+                    :key="itemIndex"
+                  >
+                    <td class="text-center">
+                      <img :src="itemList[itemIndex].imagePath" :style="imageSize"/><br>
+                      {{item.name}}
+                    </td>
+                    <td>
+                      <v-btn @click="removeItem(itemIndex)" class="error" small><v-icon>mdi-delete</v-icon></v-btn>
+                    </td>
+                  </tr>
+                </tbody>
+              </template>
+            </v-simple-table>
+          </template>
+          
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
+
+</body>
+</html>

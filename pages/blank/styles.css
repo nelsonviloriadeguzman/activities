@@ -1,0 +1,8 @@
+@import '../../css/vuejsnavbar.css';
+
+.nav{
+  background-color: orange;
+}
+.nav h1 a, .nav a {
+  color: black;
+}

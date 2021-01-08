@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Curriculum Vitae</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" defer></script>
+  <script src="app.js" defer></script>
+
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+          <v-app-bar color="primary" dark>
+            <v-toolbar-title><h2>Curriculum Vitae</h2></v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn @click="goBack" color="primary" elevation="0">Go Back</v-btn>
+          </v-app-bar>
+        <v-container>
+
+          <template>
+
+            <v-row>
+              <v-col md="7" >
+                <br>
+                <v-row>
+                  <v-col md="2"><v-img :src="shortProfile.imagePath"></v-img></v-col>
+                  <v-col md="10" >
+                    <h2><v-icon>mdi-account</v-icon> {{shortProfile.fullName}}</h2>
+                    <h2><v-icon>mdi-cellphone</v-icon> {{shortProfile.mobileNumber}}</h2>
+                    <h2><v-icon>mdi-email</v-icon> {{shortProfile.emailAddress}}</h2>
+                    <h2><v-icon>mdi-git</v-icon> {{shortProfile.github}}</h2>
+                  </v-col>
+                </v-row>
+                <br>
+              </v-col>
+              <v-col md="5" >
+                <br>
+                <v-row :style="rowHeaderStyle" >
+                  &nbsp;<h2 :style="h2Style">Work Experience</h2>
+                </v-row>
+                <br>
+                <h3><v-icon>mdi-home</v-icon> H.R.D. Singapore Pte., Ltd.</h3>
+                <h4><v-icon>mdi-map-marker</v-icon> Blk 3, Cavite Eco Zone II Gen. Trias, Cavite</h4>
+                <h4><v-icon>mdi-phone</v-icon> (046) 476-0545 / (046) 476-0465 / (02) 857-8210</h4>
+                <h4><v-icon>mdi-account</v-icon> Office Staff / Programmer</h4>
+                <h4><v-icon>mdi-calendar</v-icon>  (June 2018 - September 2020)</h4>
+                <br>
+              </v-col>
+            </v-row>
+
+            <v-row :style="rowHeaderStyle">
+              <h2 :style="h2Style">Projects</h2>
+            </v-row>
+            <br>
+            <br>
+            <v-row>
+              <v-simple-table>
+                <template v-slot:default>
+                  <thead>
+                    <tr>
+                      <th>Project Name</th>
+                      <th>Date</th>
+                      <th>Role</th>
+                      <th>HTML CSS JavaScript</th>
+                      <th>Vue.js</th>
+                      <th>Vuetify</th>
+                      <th>Bootstrap</th>
+                      <th>Materialize</th>
+                      <th>C#</th>
+                      <th>Node.js</th>
+                      <th>PHP</th>
+                      <th>Magic XPA</th>
+                      <th>Microsoft Access</th>
+                      <th>SQL Server</th>
+                      <th>MySQL</th>
+                      <th>CouchDB</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      v-for="(item,itemIndex) in projectList"
+                      :key="itemIndex"
+                    >
+                      <td>{{item.projectName}}</td>
+                      <td>{{item.projectDate}}</td>
+                      <td>{{item.projectRole}}</td>
+                      <td>
+                        <v-checkbox v-model="item.HTMLCSSJavaScript" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.VueJS" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.Vuetify" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.Bootstrap" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.Materialize" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.CSharp" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.NodeJS" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.PHP" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.MagicXPA" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.MicrosoftAccess" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.SQLServer" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.mySQL" readonly></v-checkbox>
+                      </td>
+                      <td>
+                        <v-checkbox v-model="item.couchDB" readonly></v-checkbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </template>
+              </v-simple-table>
+            </v-row>
+            <br>
+            <br>
+            <v-row :style="rowHeaderStyle">
+              <h2 :style="h2Style">Education</h2>
+            </v-row>
+
+            <v-row>
+              <v-col md="6">
+                <br>
+                <h3><v-icon>mdi-school</v-icon> National College of Science and Technology</h3>
+                <h4><v-icon>mdi-map-marker</v-icon> Amafel Building Aguinaldo Highway, Dasmariñas City, Cavite</h4>
+                <h4><v-icon>mdi-phone</v-icon> (046) 416-NCST (6278)</h4>
+                <h4><v-icon>mdi-monitor-dashboard</v-icon> B.S in Information Technology</h4>
+                <h4><v-icon>mdi-calendar</v-icon> (2013 - 2017)</h4>
+                <br>
+              </v-col>
+              <v-col md="6">
+                <br>
+                <h3><v-icon>mdi-school</v-icon> Manalo Academy School</h3>
+                <h4><v-icon>mdi-map-marker</v-icon> Gen. Trias, Cavite</h4>
+                <h4><v-icon>mdi-book</v-icon> High School</h4>
+                <h4><v-icon>mdi-calendar</v-icon> (2003 - 2007)</h4>
+                <br>
+              </v-col>
+            </v-row>
+          </template>
+
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
+
+</body>
+</html>

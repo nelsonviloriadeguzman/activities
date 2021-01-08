@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+  <nav class="nav">
+      <div class="container">
+          <h1><a href="#">Vue Basics</a></h1>
+          <ul>
+              <li><a href="#" onClick="goBack()">Go Back</a></li>
+          </ul>
+      </div>
+  </nav>
+    <div class="container">
+      <br><br><br>
+    </div>
+    <div class="container">
+      <header>
+        <h1>Reactivity in Action - Computed and Watch</h1>
+      </header>
+      <section id="assignment">
+        <button @click='addCounter(5)'>Add 5</button>
+        <button @click='addCounter(1)'>Add 1</button>
+  
+        <!-- 1) Connect the buttons and calculate a value (a number) -->
+        <!-- Show "Not there yet" until you reach a result of exactly 37 -->
+        <!-- Show "Too much!" if the result is greater than 37 -->
+        <p>Show "Not there yet" until you reach a result of exactly 37</p>
+        <p>Show "Too much!" if the result is greater than 37</p>
+        <p>Reset when Result changes after 5 seconds</p>
+        <p>{{counter}}</p>
+        <p>Result: {{result}}</p>
+        
+        <!-- 2) Watch for changes in "result" and reset the value to 0 after 5 seconds -->
+      </section>
+    </div>
+   
+  </body>
+</html>
