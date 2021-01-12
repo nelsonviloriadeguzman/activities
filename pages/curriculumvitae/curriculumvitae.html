@@ -29,8 +29,8 @@
               <v-col md="7" >
                 <br>
                 <v-row>
-                  <v-col md="2"><v-img :src="shortProfile.imagePath"></v-img></v-col>
-                  <v-col md="10" >
+                  <v-col md="3"><v-img :src="shortProfile.imagePath" :style="imgStyle"></v-img></v-col>
+                  <v-col md="9" >
                     <h2><v-icon>mdi-account</v-icon> {{shortProfile.fullName}}</h2>
                     <h2><v-icon>mdi-cellphone</v-icon> {{shortProfile.mobileNumber}}</h2>
                     <h2><v-icon>mdi-email</v-icon> {{shortProfile.emailAddress}}</h2>
