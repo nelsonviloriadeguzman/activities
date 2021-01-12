@@ -12,6 +12,9 @@ new Vue({
           h2Style:{
               padding:"10px"
               },
+          imgStyle:{
+            border: '1px solid black'
+          },
           
           shortProfile: {
             fullName: 'Nelson V. de Guzman',
