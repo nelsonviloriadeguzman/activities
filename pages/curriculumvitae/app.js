@@ -183,7 +183,7 @@ new Vue({
           var dataURL = canvas.toDataURL("image/png");
 
           return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-        }
+        },
         
         printPDF(PrintOrDownload){
 
