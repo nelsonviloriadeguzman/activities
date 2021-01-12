@@ -196,7 +196,7 @@ new Vue({
                     layout: 'noBorders',
                 table: {
                     widths:['15%','45%','40%'],
-                  body: [[	{text: 'data:image/png;base64,'+ getBase64Image('https://media-exp1.licdn.com/dms/image/C4E03AQH9D_Ke8XwipQ/profile-displayphoto-shrink_200_200/0/1610450121668?e=1616025600&v=beta&t=CTHPJYC0NTNPV3rM2vXoWVGU7oApRJCnSbKjKzq6QH0')},
+                  body: [[	{text: 'data:image/png;base64,'+ this.getBase64Image('https://media-exp1.licdn.com/dms/image/C4E03AQH9D_Ke8XwipQ/profile-displayphoto-shrink_200_200/0/1610450121668?e=1616025600&v=beta&t=CTHPJYC0NTNPV3rM2vXoWVGU7oApRJCnSbKjKzq6QH0')},
                           {
                               style: 'infoStyle',
                                     layout: 'noBorders',
