@@ -4,7 +4,7 @@ new Vue({
     vuetify: new Vuetify(),
     computed:{
       imageSize(){
-        return { height: '75px', width: '75px', padding: '3px'}
+        return { height: '100px', width: '100px', padding: '3px'}
       },
       nameHeaderStyle(){
         return { width: '175px'}
@@ -12,28 +12,135 @@ new Vue({
     },
     data () {
         return {
-          itemList: [
+
+          columnStyle: {'border-spacing':'5px'},
+          cardStyle: {display: 'table-cell'},
+          cardTextStyle : {'position' : 'relative', 'top': '3rem'},
+          comboBoxStyle : { 'padding': '0', 'margin': '0'},
+          employeeList: [
             {
               name: 'Nelson de Guzman',
-              imagePath: 'img/defaultImage.png'
-              
+              imagePath: 'img/defaultImage.png',
+              serviceList: [
+                {
+                  selectedService: {
+                    serviceName: 'Sitting - Lower Body',
+                    price: '150.00',
+                    duration: '',
+                    paid: false
+                  },
+                  serviceComboBox: [
+                    {
+                      serviceName: 'Sitting - Whole Body',
+                      price: '250.00',
+                      duration: '',
+                      paid: false
+                    },
+                    {
+                      serviceName: 'Sitting - Upper Body',
+                      price: '150.00',
+                      duration: '',
+                      paid: false
+                    },
+                    {
+                      serviceName: 'Sitting - Lower Body',
+                      price: '150.00',
+                      duration: '',
+                      paid: false
+                    },
+                  ],
+                },
+              ],
             },
+            
           ],
+          
 
         }
       },
+     
       methods:{
         goBack() {
           window.location.href = '../../index.html'
         },
-        addNew(){
-          this.itemList.push({
-            name: 'Click to update',
-            imagePath: 'img/defaultImage.png'
+        addNewEmployee(){
+          this.employeeList.push({
+            name: 'Click to Update',
+            imagePath: 'img/defaultImage.png',
+            serviceList: [
+              {
+                selectedService: {
+                  serviceName: 'Sitting - Lower Body',
+                  price: '150.00',
+                  duration: '',
+                  paid: false
+                },
+                serviceComboBox: [
+                  {
+                    serviceName: 'Sitting - Whole Body',
+                    price: '250.00',
+                    duration: '',
+                    paid: false
+                  },
+                  {
+                    serviceName: 'Sitting - Upper Body',
+                    price: '150.00',
+                    duration: '',
+                    paid: false
+                  },
+                  {
+                    serviceName: 'Sitting - Lower Body',
+                    price: '150.00',
+                    duration: '',
+                    paid: false
+                  },
+                ],
+              },
+            ],
+          },)
+        },
+        addNewService(employeeIndex){
+          this.employeeList[employeeIndex].serviceList.push({
+            selectedService: {
+              serviceName: 'Sitting - Lower Body',
+              price: '150.00',
+              duration: '',
+              paid: false
+            },
+            serviceComboBox: [
+              {
+                serviceName: 'Sitting - Whole Body',
+                price: '250.00',
+                duration: '',
+                paid: false
+              },
+              {
+                serviceName: 'Sitting - Upper Body',
+                price: '150.00',
+                duration: '',
+                paid: false
+              },
+              {
+                serviceName: 'Sitting - Lower Body',
+                price: '150.00',
+                duration: '',
+                paid: false
+              },
+            ],
           })
         },
+        togglePaid(employeeIndex,serviceIndex){
+
+          return this.employeeList[employeeIndex].serviceList[serviceIndex].selectedService.paid = !this.employeeList[employeeIndex].serviceList[serviceIndex].selectedService.paid
+        },
+        paidStatus(employeeIndex,serviceIndex){
+          return this.employeeList[employeeIndex].serviceList[serviceIndex].selectedService.paid ? 'success': 'error'
+        },
+        paidText(employeeIndex,serviceIndex){
+          return this.employeeList[employeeIndex].serviceList[serviceIndex].selectedService.paid ? 'Paid': 'Unpaid'
+        },
         removeItem(itemIndex){
-          this.itemList.splice(itemIndex,1);
+          this.employeeList.splice(itemIndex,1);
         },
       }
      

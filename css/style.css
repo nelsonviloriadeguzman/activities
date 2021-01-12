@@ -62,13 +62,18 @@
     background-size: 100% 100%;
 }
 
+.fullstackjavascript{
+    background: url('../img/fullstackjavascript.png') no-repeat;
+    background-size: 100% 100%;
+}
+
 .ganttchart{
     background: url('../img/ganttchart.png') no-repeat;
     background-size: 100% 100%;
 }
 
 .servicemonitoring{
-    background: url('../img/na.png') no-repeat;
+    background: url('../img/servicemonitoring.png') no-repeat;
     background-size: 100% 100%;
 }
 

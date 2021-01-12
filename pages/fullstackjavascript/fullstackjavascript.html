@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript FullStack</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" defer></script>
+  <script src="app.js" defer></script>
+
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+          <v-app-bar color="primary" dark>
+            <v-toolbar-title><h2>Full Stack Javascript - (Vue.js + Vuetify)</h2></v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn @click="goBack" color="primary" elevation="0">Go Back</v-btn>
+          </v-app-bar>
+
+          <v-container>
+            <v-row no-gutters>
+              <v-col sm="12" md="9">
+                <iframe class="iFrame" :style="iFrameStyle" :src="defaultVideoPath" allow="fullscreen" frameborder="0">
+                </iframe>
+                <h2>{{defaultVideoTitle}}</h2>
+              </v-col>
+              <v-col
+                sm="12"
+                md="3">
+                <v-tabs style="margin-left: 30px;">
+                  <v-tab>Tutorial List</v-tab>
+                  <v-tab>COMMENTS</v-tab>
+                  <v-tab-item>
+                      <v-list>
+                        <v-list-item
+                        v-for="(video, index) in videoList"
+                        :key="index"
+                        >
+                        <v-btn :style="btnStyle" :color="videoList[index].isActive === true ? 'primary' : 'transparent'" elevation="0" @click="changeVideo(video.title,video.path,index)">{{ video.title }}</v-btn>
+                        </v-list-item>
+                    </v-list>
+                </v-tab-item>
+                <v-tab-item>
+                        <v-card flat>
+                          <v-card-text>
+                            <p>
+                              This is for future content.
+                            </p>
+                          </v-card-text>
+                        </v-card>
+                </v-tab-item>
+                </v-tabs>
+              </v-col>
+            </v-row>
+          </v-container>
+     
+      </v-main>
+    </v-app>
+  </div>
+
+</body>
+</html>
