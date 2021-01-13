@@ -163,27 +163,6 @@ new Vue({
         goBack() {
           window.location.href = '../../index.html'
         },
-          
-      getBase64Image(imgr) {
-          var img = new Image()
-          img.src = imgr
-          // Create an empty canvas element
-          var canvas = document.createElement("canvas");
-          canvas.width = img.width;
-          canvas.height = img.height;
-
-          // Copy the image contents to the canvas
-          var ctx = canvas.getContext("2d");
-          ctx.drawImage(img, 0, 0);
-
-          // Get the data-URL formatted image
-          // Firefox supports PNG and JPEG. You could check img.src to
-          // guess the original format, but be aware the using "image/jpg"
-          // will re-encode the image.
-          var dataURL = canvas.toDataURL("image/png");
-
-          return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-        },
         
         printPDF(PrintOrDownload){
 
@@ -196,7 +175,7 @@ new Vue({
                     layout: 'noBorders',
                 table: {
                     widths:['15%','45%','40%'],
-                  body: [[	{text: 'data:image/png;base64,'+ this.getBase64Image('https://media-exp1.licdn.com/dms/image/C4E03AQH9D_Ke8XwipQ/profile-displayphoto-shrink_200_200/0/1610450121668?e=1616025600&v=beta&t=CTHPJYC0NTNPV3rM2vXoWVGU7oApRJCnSbKjKzq6QH0')},
+                  body: [[	{text:'img/defaultImage.png'},
                           {
                               style: 'infoStyle',
                                     layout: 'noBorders',
@@ -214,8 +193,8 @@ new Vue({
                                 table: {
                                     widths:['*'],
                                   body: [[{ text: 'Work Experience', style: 'headerStyle',}],
-                                          [{ text: '\nH.R.D. Singapore Pte., Ltd.', style:"miniTitleStyle",}],
-                                          [{ text: 'Blk 3, Cavite Eco Zone II Gen. Trias, Cavite\n(046) 476-0545 / (046) 476-0465 / (02) 857-8210\nOffice Staff / Programmer\nJune 2018 - September 2020\n\n'}]
+                                          [{ text: '\nOffice Staff / Programmer', style:"miniTitleStyle",}],
+                                          [{ text: 'H.R.D. Singapore Pte., Ltd.\nBlk 3, Cavite Eco Zone II Gen. Trias, Cavite\n(046) 476-0545 / (046) 476-0465 / (02) 857-8210\nJune 2018 - September 2020\n\n'}]
                                       ]
                                     },
                                   
