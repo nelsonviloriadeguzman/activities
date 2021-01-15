@@ -24,8 +24,8 @@
           <v-app-bar color="primary" dark>
             <v-toolbar-title><h2>Curriculum Vitae</h2></v-toolbar-title>
             <v-spacer></v-spacer>
-            <!-- <v-btn @click="printPDF(1)" color="primary" elevation="0">Download</v-btn>
-            <v-btn @click="printPDF(2)" color="primary" elevation="0">Print</v-btn> -->
+            <!-- <v-btn @click="downloadOrPreviewPDF(1)" color="primary" elevation="0">Download</v-btn> -->
+            <v-btn @click="downloadOrPreviewPDF(2)" color="primary" elevation="0">Preview</v-btn>
             <v-btn @click="goBack" color="primary" elevation="0">Go Back</v-btn>
           </v-app-bar>
         <v-container>
@@ -41,6 +41,7 @@
                     <h2><v-icon>mdi-account</v-icon> {{shortProfile.fullName}}</h2>
                     <h2><v-icon>mdi-cellphone</v-icon> {{shortProfile.mobileNumber}}</h2>
                     <h2><v-icon>mdi-email</v-icon> {{shortProfile.emailAddress}}</h2>
+                    <h2><v-icon>mdi-skype</v-icon> {{shortProfile.skypeName}}</h2>
                     <h2><v-icon>mdi-git</v-icon> {{shortProfile.github}}</h2>
                   </v-col>
                 </v-row>
@@ -57,6 +58,47 @@
                 <h4><v-icon>mdi-map-marker</v-icon> Blk 3, Cavite Eco Zone II Gen. Trias, Cavite</h4>
                 <h4><v-icon>mdi-phone</v-icon> (046) 476-0545 / (046) 476-0465 / (02) 857-8210</h4>
                 <h4><v-icon>mdi-calendar</v-icon> June 2018 - September 2020</h4>
+                <br>
+              </v-col>
+            </v-row>
+
+            <v-row :style="rowHeaderStyle">
+              <h2 :style="h2Style">Information Technology Skills</h2>
+            </v-row>
+
+            <v-row>
+              <v-col md="3">
+                <br>
+                <h3>Javascript Framework</h3>
+                Vue.js<br>
+                <br>
+              </v-col>
+              <v-col md="3">
+                <br>
+                <h3>CSS Framework</h3>
+                Vuetify<br>
+                Bootstrap<br>
+                Materilize<br>
+                <br>
+              </v-col>
+
+              <v-col md="3">
+                <br>
+                <h3>Server Side / Back End</h3>
+                 Node.js<br>
+                 MagicXPA<br>
+                 PHP<br>
+                 C#<br>
+                <br>
+              </v-col>
+
+              <v-col md="3">
+                <br>
+                <h3>Database</h3>
+                MySQL<br>
+                CouchDB<br>
+                SQL Server<br>
+                Microsoft Access<br>
                 <br>
               </v-col>
             </v-row>
@@ -81,7 +123,7 @@
               </v-col>
               <v-col md="6">
                 <br>
-                <h3>Periodic/Occational</h3>
+                <h3>Periodic/Occasional</h3>
                 Update of master tables if needed as users request for additional values<br>
                 Support and attends to co-members queries in technial aspects<br>
                 Suggest improvement for lessen manual checking<br>
@@ -89,6 +131,30 @@
                 Administer the newly developed system from trial deployment up to actual impementation<br>
                 Attend meeting with requester as part of system development and system modification if needed.<br>
                 Trainer of newly hired staffs<br>
+                <br>
+              </v-col>
+            </v-row>
+
+            <v-row :style="rowHeaderStyle">
+              <h2 :style="h2Style">Education</h2>
+            </v-row>
+
+            <v-row>
+              <v-col md="6">
+                <br>
+                <h3><v-icon>mdi-school</v-icon> National College of Science and Technology</h3>
+                <h4><v-icon>mdi-map-marker</v-icon> Amafel Building Aguinaldo Highway, Dasmariñas City, Cavite</h4>
+                <h4><v-icon>mdi-phone</v-icon> (046) 416-NCST (6278)</h4>
+                <h4><v-icon>mdi-monitor-dashboard</v-icon> B.S in Information Technology</h4>
+                <h4><v-icon>mdi-calendar</v-icon> 2013 - 2017</h4>
+                <br>
+              </v-col>
+              <v-col md="6">
+                <br>
+                <h3><v-icon>mdi-school</v-icon> Manalo Academy School</h3>
+                <h4><v-icon>mdi-map-marker</v-icon> Gen. Trias, Cavite</h4>
+                <h4><v-icon>mdi-book</v-icon> High School</h4>
+                <h4><v-icon>mdi-calendar</v-icon> 2003 - 2007</h4>
                 <br>
               </v-col>
             </v-row>
@@ -173,31 +239,7 @@
                 </template>
               </v-simple-table>
             </v-row>
-            <br>
-            <br>
-            <v-row :style="rowHeaderStyle">
-              <h2 :style="h2Style">Education</h2>
-            </v-row>
-
-            <v-row>
-              <v-col md="6">
-                <br>
-                <h3><v-icon>mdi-school</v-icon> National College of Science and Technology</h3>
-                <h4><v-icon>mdi-map-marker</v-icon> Amafel Building Aguinaldo Highway, Dasmariñas City, Cavite</h4>
-                <h4><v-icon>mdi-phone</v-icon> (046) 416-NCST (6278)</h4>
-                <h4><v-icon>mdi-monitor-dashboard</v-icon> B.S in Information Technology</h4>
-                <h4><v-icon>mdi-calendar</v-icon> 2013 - 2017</h4>
-                <br>
-              </v-col>
-              <v-col md="6">
-                <br>
-                <h3><v-icon>mdi-school</v-icon> Manalo Academy School</h3>
-                <h4><v-icon>mdi-map-marker</v-icon> Gen. Trias, Cavite</h4>
-                <h4><v-icon>mdi-book</v-icon> High School</h4>
-                <h4><v-icon>mdi-calendar</v-icon> 2003 - 2007</h4>
-                <br>
-              </v-col>
-            </v-row>
+           
           </template>
 
         </v-container>
